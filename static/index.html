@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CS Concept Tutor</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <span class="logo">CS</span>
+        <div>
+          <h1>CS Concept Tutor</h1>
+          <p class="model" id="modelName">llama3.1:8b</p>
+        </div>
+      </div>
+
+      <div class="status" id="status">
+        <span class="dot"></span>
+        <span id="statusText">Checking…</span>
+      </div>
+
+      <section>
+        <h2>Topics</h2>
+        <div class="chips" id="topics"></div>
+      </section>
+
+      <section>
+        <h2>Try asking</h2>
+        <div class="samples" id="samples"></div>
+      </section>
+
+      <button id="clearBtn" class="btn-secondary" type="button">Clear chat</button>
+    </aside>
+
+    <main class="chat">
+      <header class="chat-header">
+        <button id="menuBtn" class="menu-btn" type="button" aria-label="Toggle sidebar">☰</button>
+        <span class="chat-title">CS Concept Tutor</span>
+        <span class="model-pill">llama3.1:8b</span>
+      </header>
+
+      <div class="messages" id="messages" aria-live="polite">
+        <div class="empty" id="emptyState">
+          <h2>What do you want to learn today?</h2>
+          <p>Ask about data structures, operating systems, databases, networks, AI and more.</p>
+          <div class="samples" id="emptySamples"></div>
+        </div>
+      </div>
+
+      <div class="composer">
+        <textarea id="input" rows="1" maxlength="2000"
+          placeholder="Ask a Computer Science question… (Enter to send, Shift+Enter for a new line)"></textarea>
+        <button id="sendBtn" class="btn-primary" type="button">Send</button>
+      </div>
+      <p class="hint">Runs locally on Ollama. Answers may contain mistakes, so verify important facts.</p>
+    </main>
+  </div>
+  <script src="/static/script.js"></script>
+</body>
+</html>
